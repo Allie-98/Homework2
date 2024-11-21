@@ -34,15 +34,18 @@ In another terminal, use the following command to run the node:
     
     $ros2 run ros2_kdl_package ros2_kdl_node --ros-args -p cmd_interface:=effort
 
-To rewatch the record, unzip the ROSBAG_PUNTO_3 and ROSBAG_PUNTO_4 folders and write on a terminal this command:
+To rewatch the records, unzip the ROSBAG_PUNTO_3 folder and write on a terminal this command:
 
-    $ros2 launch iiwa_bringup iiwa.launch.py
+    $ros2 launch iiwa_bringup iiwa.launch.py command_interface:="effort" robot_controller:="effort_controller"
 
 and on another terminal, write:
 
     $cd src/Homework2/ROSBAG_PUNTO_3/<bag_directory_name>
 
     $ros2 bag play <bag_file_name>
+
+To rewatch the records in the folder ROSBAG_PUNTO_4, substitute the "ROSBAG_PUNTO_3" in the previous command with "ROSBAG_PUNTO_4"
+
 
 
 ##Pay attention
