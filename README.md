@@ -34,8 +34,18 @@ In another terminal, use the following command to run the node:
     
     $ros2 run ros2_kdl_package ros2_kdl_node --ros-args -p cmd_interface:=effort
 
+To rewatch the record, unzip the ROSBAG_PUNTO_3 and ROSBAG_PUNTO_4 folders and write on a terminal this command:
 
-#Pay attention
+    $ros2 launch iiwa_bringup iiwa.launch.py
+
+and on another terminal, write:
+
+    $cd src/Homework2/ROSBAG_PUNTO_3/<bag_directory_name>
+
+    $ros2 bag play <bag_file_name>
+
+
+##Pay attention
 
 To select the desired trajectory among the 4 possible options, go to the kdl_planner.h file and set the choice_traj variable as follows:
 
@@ -53,4 +63,6 @@ In the same file you can also choose what kind of inverse dynamics control to us
     1 if you want to use the inverse dynamics in joints space.
 
     2 if you want to use the inverse dynamics in operational space.
+
+
 
