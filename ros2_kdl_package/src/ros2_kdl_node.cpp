@@ -119,7 +119,7 @@ class Iiwa_pub_sub : public rclcpp::Node
             Eigen::Vector3d end_position; end_position << init_position[0], -init_position[1], init_position[2];
 
             // Plan trajectory
-            double traj_duration =1.5, acc_duration = 0.5, t = 0.0 , r= 0.2;  //r=0.25 
+            double traj_duration =1.5, acc_duration = 0.5, t = 0.0 , r= 0.1;  //r=0.25 
             
             
             if(choice_traj ==1 ){
@@ -129,11 +129,11 @@ class Iiwa_pub_sub : public rclcpp::Node
               planner_ = KDLPlanner(traj_duration, acc_duration, init_position, end_position);
             }
             else if(choice_traj ==3){
-              acc_duration = 0.25;
+              acc_duration = 0.2;
               planner_= KDLPlanner(traj_duration, init_position , r , acc_duration);
             }
             else if(choice_traj==4){
-              acc_duration = 0.25;
+              acc_duration = 0.2;
               planner_ = KDLPlanner(traj_duration, acc_duration, init_position, end_position);
             }
             else{
